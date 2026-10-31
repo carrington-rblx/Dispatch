@@ -1,36 +1,43 @@
 # Dispatch
 
-Dispatch is an independent, Dispatch-to-Dispatch communications platform. It is designed to provide its own personal accounts, `@dispatch.com` identities, messaging, People/address book, calendars, event scheduling, and organization workspaces with verified affiliation and organization-specific Dispatch namespaces (for example, `@house.dp`).
+Dispatch is an independent, Dispatch-to-Dispatch communications platform with its own personal identities, messaging, People directory, calendars, and organization workspaces.
 
-**Brand**
-- Navy: `#002147`
-- Surface: `#F8FAF9`
+## Product identity
 
-## Product direction
+- Personal addresses use the `@dispatch.com` namespace.
+- Organization addresses use Dispatch-internal namespaces such as `@house.dp`.
+- Dispatch is its own network: no Gmail, Outlook, Yahoo, IMAP, SMTP, or external email federation in the initial product.
+- Organization affiliation, organization verification, and official role attestation are separate decisions.
+- A person's personal identity remains intact if an organization address is granted or revoked.
 
-- Users create accounts directly with Dispatch; no Gmail, Outlook, Yahoo, or other existing email account is required.
-- The initial network is Dispatch-to-Dispatch only. Users message other active Dispatch identities, not external email providers.
-- Personal identities can request affiliation with organizations. Approval is controlled by authorized organization administrators.
-- Organizations can have their own Dispatch namespace, administrators, member directory, shared mailboxes, and calendars.
-- Organization verification and individual membership/role attestation are separate trust decisions.
-- A person's personal identity remains intact when an organization address is granted or revoked.
+## Current interface
 
-## Detailed specification
+The root `index.html` is a responsive Outlook-inspired, five-zone Dispatch workspace prototype:
 
-See [docs/PRODUCT_SPEC.md](docs/PRODUCT_SPEC.md) for the detailed product requirements, workflows, roles, verification model, security and authorization rules, suggested data model, technical architecture, roadmap, and acceptance criteria.
+1. Top command bar with Dispatch branding, global search, help, settings, notifications, and profile.
+2. Application rail for Mail, Calendar, People, and Tasks.
+3. Navy folder and category navigation with compose and storage indicator.
+4. Message list with Focused/Other tabs, search, selection, flags, quick actions, and bulk actions.
+5. Reading pane with message actions, sender details, body, and attachment placeholder.
 
-## Current implementation status
+The prototype also includes compose, reply, reply-all, forward, draft saving, folders, categories, archive, junk, trash, and keyboard shortcuts. Calendar, People, Tasks, and Settings have initial workspace screens.
 
-The current `index.html` is an early front-end prototype with seeded demonstration messages and browser-local persistence. It is **not yet** a production email service: it does not yet provide real registration, server-backed identities, cross-device messaging, organization administration, People, or calendar functionality. Do not use real or sensitive information in the demo.
+### Important implementation boundary
 
-## Important namespace note
+This is still a **front-end demonstration**, not a production communications service. Mail data is stored in the current browser's local storage. Sending adds an item to local Sent Items; it does not deliver a message to another person. Calendar, People, Tasks, organization administration, notifications, and settings are UI foundations/placeholders. There is no real account registration, authentication, cross-device synchronization, server-side message delivery, attachment upload/scanning, or organization verification workflow yet. Do not enter real or sensitive information.
 
-The proposed `.dp` addresses are Dispatch-internal identities and resolve only within the Dispatch network in the initial product. This does not claim that `.dp` is a publicly registered DNS top-level domain or that these addresses can receive mail from the public internet. Public email interoperability would be a separate product decision and is explicitly outside the initial scope.
+## Detailed product specification
 
-## Suggested implementation foundation
+See [docs/PRODUCT_SPEC.md](docs/PRODUCT_SPEC.md) for product requirements, identity and affiliation workflows, organization verification, messaging, People, Calendar, administration, data model, authorization, architecture, roadmap, and acceptance criteria.
 
-A production implementation needs secure authentication, a shared database with strict tenant isolation and row-level authorization, server-side message delivery, private attachment storage and scanning, realtime updates, background jobs, audit logging, abuse controls, backups, and operational monitoring. The product specification describes one practical architecture and a phased build plan.
+## Namespace note
 
-## Run the current prototype
+The proposed `.dp` addresses are internal Dispatch identities in the initial product. This does not claim that `.dp` is a publicly registered DNS top-level domain or that these addresses can receive mail from the public internet.
 
-Open `index.html` in a browser, or serve the repository with any static file server. No build step is required for the current prototype.
+## Production architecture direction
+
+A production implementation needs secure authentication, Postgres with strict row-level authorization, trusted server-side message delivery, private attachment storage and scanning, realtime updates, background jobs, audit logging, abuse controls, backups, and operational monitoring. Never put service-role credentials in browser code. All personal and organization data must be tenant-isolated and permission-checked on the server.
+
+## Run the prototype
+
+Open `index.html` in a browser or serve the repository with any static file server. No build step is required.
