@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a192f">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#002147">
 <title>Dispatch — State Mail</title>
 <style>
 :root{font-family:Inter,"Segoe UI",system-ui,sans-serif;color:#172033;background:#f5f7fa;font-size:13px;--navy:#0a192f;--navy2:#102541;--navy3:#193653;--gold:#e5ad42;--gold2:#f4c66b;--line:#dce2e9;--muted:#69778a;--paper:#fff;--soft:#f3f6f9;--blue:#315b83;--green:#2e795c;--shadow:0 12px 34px #091a2d1c}
@@ -148,6 +148,30 @@ body,.workspace{background:#F8FAF9}
 .panel{border-color:#dce3e8}
 .attachment{background:#F8FAF9;border-color:#dce3e8}
 @media(max-width:620px){.workspace.reading .reader{background:#fff}}
+
+
+/* Final palette enforcement */
+:root{color-scheme:light;--navy:#002147;--navy2:#F8FAF9;--navy3:#e8eef3;--gold:#002147;--gold2:#173d63;--blue:#002147;--soft:#F8FAF9}
+body,.workspace,.rail,.folders{background-color:#F8FAF9!important}
+.top,.composehead,.toast{background-color:#002147!important;color:#fff!important}
+.crest,.profile{background:#F8FAF9!important;color:#002147!important;border-color:#F8FAF9!important}
+.newbtn,.send,.screenbutton.gold{background:#002147!important;border-color:#002147!important;color:#fff!important}
+.newbtn:hover,.send:hover,.screenbutton.gold:hover{background:#173d63!important}
+.railbtn{color:#002147!important}
+.railbtn:hover,.railbtn.active{background:#e8eef3!important;color:#002147!important}
+.railbtn.active:before,.folder.active:before{background:#002147!important}
+.folder{color:#172b40!important}
+.folder:hover,.folder.active{background:#e8eef3!important;color:#002147!important}
+.ficon,.folder.active .ficon,.count{color:#002147!important}
+.sectionhead,.storage,.timestamp,.preview{color:#536477}
+.tab.active{color:#002147!important;border-bottom-color:#002147!important}
+.mail.selected{background:#e8eef3!important;border-left-color:#002147!important}
+.mail.unread{border-left-color:#002147!important}
+.unread .sender,.unread .subject,.listtitle,.subjectline,.screen h2{color:#002147!important}
+.tool:hover,.tool.primary{color:#002147!important}
+.pill{background:#e8eef3!important;color:#002147!important}
+.search span{color:#002147}
+.list,.reader,.composebox,.panel{background:#fff}
 
 </style>
 </head>
