@@ -98,7 +98,58 @@ body{background:#f5f5f5}
 .screenbutton.gold{background:#0f6cbd;border-color:#0f6cbd;color:#fff}
 .screenbutton.gold:hover{background:#115ea3}
 @media(max-width:1150px){.workspace{grid-template-columns:48px 205px 320px minmax(300px,1fr)}}
-.icon-defs{position:absolute;width:0;height:0;overflow:hidden}.ico{width:17px;height:17px;display:inline-block;vertical-align:middle;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.railbtn .ico{width:19px;height:19px}.topicon .ico,.launcher .ico{width:18px;height:18px}.ficon .ico{width:16px;height:16px}.tool .ico{width:16px;height:16px}.quick .ico{width:15px;height:15px}.newbtn .ico{width:16px;height:16px;vertical-align:-3px;margin-right:5px}</style>
+.icon-defs{position:absolute;width:0;height:0;overflow:hidden}.ico{width:17px;height:17px;display:inline-block;vertical-align:middle;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.railbtn .ico{width:19px;height:19px}.topicon .ico,.launcher .ico{width:18px;height:18px}.ficon .ico{width:16px;height:16px}.tool .ico{width:16px;height:16px}.quick .ico{width:15px;height:15px}.newbtn .ico{width:16px;height:16px;vertical-align:-3px;margin-right:5px}
+/* Dispatch brand palette: Oxford navy + porcelain */
+:root{
+ --navy:#002147;--navy2:#F8FAF9;--navy3:#e8eef3;
+ --gold:#002147;--gold2:#173d63;--blue:#002147;
+ --line:#dce3e8;--muted:#536477;--soft:#F8FAF9;
+ --paper:#fff;--shadow:0 4px 16px #00214718;
+ color:#172b40;background:#F8FAF9
+}
+body,.workspace{background:#F8FAF9}
+.top{background:#002147;color:#fff}
+.brand small{color:#d9e3ed}
+.crest{background:#F8FAF9;color:#002147}
+.search input{border:1px solid #d5dee6}
+.profile{background:#F8FAF9;color:#002147}
+.rail{background:#F8FAF9;border-right:1px solid #dce3e8}
+.railbtn{color:#42566c}
+.railbtn:hover{background:#e9eef3;color:#002147}
+.railbtn.active{background:#e5ebf1;color:#002147}
+.railbtn.active:before{background:#002147}
+.folders{background:#F8FAF9;color:#172b40;border-right:1px solid #dce3e8}
+.newbtn{background:#002147;color:#fff;border-color:#002147}
+.newbtn:hover{background:#173d63}
+.sectionhead{color:#536477}
+.folder{color:#273d53}
+.folder:hover{background:#edf1f4}
+.folder.active{background:#e7edf2;color:#002147}
+.folder.active:before{background:#002147}
+.ficon{color:#53677b}
+.folder.active .ficon,.count{color:#002147}
+.folder-divider{background:#dce3e8}
+.storage{color:#536477}
+.storagebar{background:#dce3e8}.storagebar i{background:#002147}
+.list,.reader{background:#fff}
+.listhead,.toolbar{border-color:#dce3e8}
+.listtitle,.subjectline,.screen h2{color:#002147}
+.tab.active{color:#002147;border-bottom-color:#002147}
+.mail.selected{background:#edf2f6;border-left-color:#002147}
+.mail.unread{border-left-color:#002147}
+.unread .sender,.unread .subject{color:#002147}
+.tool:hover{color:#002147}
+.tool.primary{color:#002147}
+.send,.screenbutton.gold{background:#002147;border-color:#002147;color:#fff}
+.send:hover,.screenbutton.gold:hover{background:#173d63}
+.pill{background:#e8eef3;color:#002147}
+.composehead{background:#F8FAF9;color:#002147}
+.toast{background:#002147}
+.panel{border-color:#dce3e8}
+.attachment{background:#F8FAF9;border-color:#dce3e8}
+@media(max-width:620px){.workspace.reading .reader{background:#fff}}
+
+</style>
 </head>
 <body>
 <svg aria-hidden="true" class="icon-defs" xmlns="http://www.w3.org/2000/svg">
